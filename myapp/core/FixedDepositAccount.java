@@ -21,7 +21,7 @@ public class FixedDepositAccount extends BankAccount{
   }
 
   @Override
-  public float getBalance() {
-    return super.getBalance() * .1f;
+  public float getAccountBalance() {
+    return super.getAccountBalance() * .1f;
   }
 }

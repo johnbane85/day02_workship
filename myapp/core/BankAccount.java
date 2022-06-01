@@ -20,17 +20,20 @@ private Long accountCloseDate;
 public BankAccount(String accountHolderName){
   this.setAccountName(accountHolderName);
   this.setAccountBalance(0f);
+  this.setAccountNumber();
 
-  System.out.println("Account is created: " + accountHolderName + " Account Number is " + accountNumber);
+  System.out.println("Account is created: " + accountHolderName + " Account Number is " + this.accountNumber);
 }
 
 // Constructor Overloading
 public BankAccount(String accountHolderName, Float accountBalance) {
   this.setAccountName(accountHolderName);
   this.setAccountBalance(accountBalance);
+  this.setAccountNumber();
 
-  System.out.println("Account is created: " + accountHolderName + " Account Number is " + accountNumber + " Account Balance: " + accountBalance);
+  System.out.println("Account is created: " + accountHolderName + " Account Number is " + this.accountNumber + " Account Balance: " + accountBalance);
 }
+
 
 // Methods
 public void deposit(Float depositAmount) {
@@ -58,19 +61,19 @@ public void withdraw(Float withdrawAmount) {
 
 // getters and setters
 public String getAccountNumber() {
-  return accountNumber;
+  return this.accountNumber;
 }
 
 public void setAccountNumber() {
   
   UUID id = UUID.randomUUID();
-  System.out.println(id.toString());
+  //System.out.println(id.toString());
   String idAsString = id.toString();
-  accountNumber = idAsString.substring(0,8);
+  this.accountNumber = idAsString.substring(0,8);
 }
 
 public String getAccountName() {
-  return accountName;
+  return this.accountName;
 }
 
 public void setAccountName(String accountName) {
